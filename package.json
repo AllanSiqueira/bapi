@@ -1,0 +1,23 @@
+{
+  "name": "bapi",
+  "version": "0.0.1",
+  "description": "",
+  "main": "dist/v2/index.js",
+  "scripts": {
+    "build": "tsc",
+    "serve_dev": "nodemon src/v2/test.ts",
+    "serve_build": "nodemon dist/test.js"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "nodemon": "^2.0.13",
+    "ts-node": "^10.3.0"
+  },
+  "keywords": [],
+  "author": "bapijs",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1"
+  }
+}
