@@ -3,8 +3,8 @@ function Server(client: any) {
     const app = express();
 
     client.on('createRoute', (ctx: any, next?: Function) => {
-        let fn = (req: any, res: any) => res.json(ctx.action({req, res}));
-        switch (ctx.type) {
+        let fn = (req: any, res: any) => res.json(client.call(ctx.method, ctx.label, {req, res}));
+        switch (ctx.method) {
             case "GET": app.get(`/api/${ctx.label}`, fn);
             case "POST": app.post(`/api/${ctx.label}`, fn);
             default: app.get(`/api/${ctx.label}`, fn);
@@ -16,6 +16,7 @@ function Server(client: any) {
 
 class Client {
     private listeners: any[] = [];
+    private middlewares: any[] = [];
     public routes: any[] = [];
     public options: any = {};
    
@@ -43,8 +44,30 @@ class Client {
         }
     }
 
-    // public use(fn: Function, options?: any) {}
-    // public call(method: string, route: string, next?: Function) {}
+    public use(fn: Function, options?: any) {
+        this.middlewares.push({
+            fn,
+            options
+        });
+    }
+    
+    public call(method: string, route: string, context: any) {
+        let data = this.routes.find(self => self.method === method && self.label === route);
+        if(data) {
+            let middlewares = this.middlewares;
+            let res = context;
+            middlewares.forEach(function(self: any, index: number) {
+                res = self.fn(res);
+            });
+            return data.action(res);
+        }
+        else {
+            return {
+                error: `Cannot ${method} ${route}`
+            }
+        }
+    }
+
     public get(route: string, next: Function) {
         this.createRoute("GET", route, next);
     }

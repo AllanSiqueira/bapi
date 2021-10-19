@@ -5,8 +5,8 @@ function Server(client) {
     const express = require('express');
     const app = express();
     client.on('createRoute', (ctx, next) => {
-        let fn = (req, res) => res.json(ctx.action({ req, res }));
-        switch (ctx.type) {
+        let fn = (req, res) => res.json(client.call(ctx.method, ctx.label, { req, res }));
+        switch (ctx.method) {
             case "GET": app.get(`/api/${ctx.label}`, fn);
             case "POST": app.post(`/api/${ctx.label}`, fn);
             default: app.get(`/api/${ctx.label}`, fn);
@@ -18,6 +18,7 @@ exports.Server = Server;
 class Client {
     constructor(options) {
         this.listeners = [];
+        this.middlewares = [];
         this.routes = [];
         this.options = {};
         if (options)
@@ -43,8 +44,28 @@ class Client {
             console.error(`[bapi:nonfatal] ${type} ${route} already exists.`);
         }
     }
-    // public use(fn: Function, options?: any) {}
-    // public call(method: string, route: string, next?: Function) {}
+    use(fn, options) {
+        this.middlewares.push({
+            fn,
+            options
+        });
+    }
+    call(method, route, context) {
+        let data = this.routes.find(self => self.method === method && self.label === route);
+        if (data) {
+            let middlewares = this.middlewares;
+            let res = context;
+            middlewares.forEach(function (self, index) {
+                res = self.fn(res);
+            });
+            return data.action(res);
+        }
+        else {
+            return {
+                error: `Cannot ${method} ${route}`
+            };
+        }
+    }
     get(route, next) {
         this.createRoute("GET", route, next);
     }
