@@ -80,7 +80,6 @@ class Client {
             action: next
         });
     }
-    // public build() {}
 }
 
 function bapi(...args: any) {
