@@ -3,25 +3,25 @@
 <details open>
 <summary>Table of Contents</summary>
 <ul style="list-style-type:square">
-<li>What is Bapi?</li>
-<li>How should Bapi be used?</li>
-	<li>Bapi</li>
+    <li><a href="#what-is-bapi">What is Bapi?</a></li>
+    <li><a href="#how-should-bapi-be-used">How should Bapi be used?</a></li>
+	<li><a href="#">Bapi</a></li>
 	<ul style="list-style-type:square">
-  		<li>bapi(options?: object)</li>
+  		<li><a href="#">bapi(options?: object)</a></li>
   </ul>
-  <li>Class: Client</li>
+  <li><a href="#class-client">Class: Client</a></li>
   <ul style="list-style-type:square">
-  	<li>client.use(middleware: Function)</li>
-	<li>client.call(method: string, route: string, context: any)</li>
-	<li>get(route: string, callback: Function)</li>
-	<li>post(route: string, callback: Function)</li>
-	<li>on(listener: string, callback: Function)</li>
+  	<li><a href="#clientusemiddleware-function">client.use(middleware: Function)</a></li>
+	<li><a href="#clientcallmethod-string-route-string-context-any">client.call(method: string, route: string, context: any)</a></li>
+	<li><a href="#clientget-postroute-string-callback-function">get(route: string, callback: Function)</a></li>
+	<li><a href="#clientget-postroute-string-callback-function">post(route: string, callback: Function)</a></li>
+	<li><a href="#clientlistenlistener-string-callback-function">on(listener: string, callback: Function)</a></li>
   </ul>
-  <li>Server</li>
+  <li><a href="#server">Server</a></li>
    <ul style="list-style-type:square">
-  	<li>server(client: Client)</li>
+  	<li><a href="#server">server(client: Client)</a></li>
   </ul>
-  <li>Creating Bapi middlewares</li>
+  <li><a href="#creating-bapi-middlewares">Creating Bapi middlewares</a></li>
 </ul>
 </details>
 
@@ -95,7 +95,7 @@ client.get("version", (context: any) => {
 });
 ```
 
-#### client.listen(listener: string, callback: Function)
+#### client.on(listener: string, callback: Function)
 Creates an event listener to be called every time a certain Client action happens.
 | Argument | Type     | Description                         |
 |----------|----------|-------------------------------------|
