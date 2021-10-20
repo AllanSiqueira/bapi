@@ -1,10 +1,11 @@
-# Bapi v0.1 Documentation
+# Bapi v0.0.1 Documentation
 
 <details open>
 <summary>Table of Contents</summary>
 <ul style="list-style-type:square">
     <li><a href="#what-is-bapi">What is Bapi?</a></li>
     <li><a href="#how-should-bapi-be-used">How should Bapi be used?</a></li>
+    <li><a href="#installation">Installation</a></li>
 	<li><a href="#bapi">Bapi</a></li>
 	<ul style="list-style-type:square">
   		<li><a href="#bapi">bapi(options?: object)</a></li>
@@ -31,6 +32,12 @@
 ### How should Bapi be used?
 While it is possible to create an API that does not run through a server, that probably shouldn't be done... incase you didn't know APIs are to be used in the web to access information from various projects- as well as to allow developers to integrate your program into their code! You can create middleware/plugins to easily integrate any server system. However, Bai omes with a built in Express handler. See [bapi.Server](#) for information regarding it!
 
+### Installation
+Install via NPM:
+```
+npm install bapi.js --save
+```
+
 ### Bapi
 Default export for Bapi.
 
@@ -41,7 +48,7 @@ Default export for Bapi.
 **@Returns** new Client(...)
 #### Example
 ```ts
-const bapi = require('bapi');
+const bapi = require('bapi.js');
 const client = bapi({version: "v1.0"});
 console.log(client.options) // { version: "v1.0" }
 ```
@@ -54,7 +61,7 @@ General constructor for all things Bapi!
 
 #### Example
 ```ts
-const {Client} = require('bapi');
+const {Client} = require('bapi.js');
 const client = new Client({version: "v1.0"});
 console.log(client.options); // { version: "v1.0" }
 ```
@@ -142,7 +149,7 @@ Built-in Express server builder.
 
 #### Example
 ```ts
-const {Client, Serer} = require('bapi');
+const {Client, Serer} = require('bapi.js');
 const client = new Client();
 const server = Server(client);
 
