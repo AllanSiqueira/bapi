@@ -36,6 +36,8 @@ Default export for Bapi.
 | Argument | Type   | Description            |
 |-----------|--------|------------------------|
 | Options   | object | Options for API client |
+
+
 **@Returns** new Client(...)
 #### Example
 ```ts
