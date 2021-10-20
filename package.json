@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc",
     "serve_dev": "nodemon src/v2/test.ts",
-    "serve_build": "nodemon dist/test.js"
+    "serve_build": "nodemon dist/v2/test.js"
   },
   "devDependencies": {
     "@types/express": "^4.17.13",
