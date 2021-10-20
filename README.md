@@ -5,9 +5,9 @@
 <ul style="list-style-type:square">
     <li><a href="#what-is-bapi">What is Bapi?</a></li>
     <li><a href="#how-should-bapi-be-used">How should Bapi be used?</a></li>
-	<li><a href="#">Bapi</a></li>
+	<li><a href="#bapi">Bapi</a></li>
 	<ul style="list-style-type:square">
-  		<li><a href="#">bapi(options?: object)</a></li>
+  		<li><a href="#bapi">bapi(options?: object)</a></li>
   </ul>
   <li><a href="#class-client">Class: Client</a></li>
   <ul style="list-style-type:square">
@@ -15,7 +15,7 @@
 	<li><a href="#clientcallmethod-string-route-string-context-any">client.call(method: string, route: string, context: any)</a></li>
 	<li><a href="#clientget-postroute-string-callback-function">get(route: string, callback: Function)</a></li>
 	<li><a href="#clientget-postroute-string-callback-function">post(route: string, callback: Function)</a></li>
-	<li><a href="#clientlistenlistener-string-callback-function">on(listener: string, callback: Function)</a></li>
+	<li><a href="#clientonlistener-string-callback-function">on(listener: string, callback: Function)</a></li>
   </ul>
   <li><a href="#server">Server</a></li>
    <ul style="list-style-type:square">
@@ -30,6 +30,19 @@
 
 ### How should Bapi be used?
 While it is possible to create an API that does not run through a server, that probably shouldn't be done... incase you didn't know APIs are to be used in the web to access information from various projects- as well as to allow developers to integrate your program into their code! You can create middleware/plugins to easily integrate any server system. However, Bai omes with a built in Express handler. See [bapi.Server](#) for information regarding it!
+
+### Bapi
+Default export for Bapi.
+| Argument | Type   | Description            |
+|-----------|--------|------------------------|
+| Options   | object | Options for API client |
+**@Returns** new Client(...)
+#### Example
+```ts
+const bapi = require('bapi');
+const client = bapi({version: "v1.0"});
+console.log(client.options) // { version: "v1.0" }
+```
 
 ### Class: Client
 General constructor for all things Bapi!
