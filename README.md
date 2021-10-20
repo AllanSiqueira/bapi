@@ -33,10 +33,10 @@ While it is possible to create an API that does not run through a server, that p
 
 ### Bapi
 Default export for Bapi.
-| Argument | Type   | Description            |
-|-----------|--------|------------------------|
-| Options   | object | Options for API client |
 
+| Argument  | Type       | Description                |
+|-----------|------------|----------------------------|
+| Options    | object | Options for API client |
 
 **@Returns** new Client(...)
 #### Example
