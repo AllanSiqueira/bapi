@@ -2,11 +2,11 @@
   "name": "bapi.js",
   "version": "0.0.1",
   "description": "",
-  "main": "dist/v2/index.js",
+  "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
-    "serve_dev": "nodemon src/v2/test.ts",
-    "serve_build": "nodemon dist/v2/test.js"
+    "serve_dev": "nodemon src/test.ts",
+    "serve_build": "nodemon dist/test.js"
   },
   "devDependencies": {
     "@types/express": "^4.17.13",

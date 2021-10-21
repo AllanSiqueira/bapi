@@ -1,1 +1,0 @@
-{"version":3,"file":"mod.js","sourceRoot":"","sources":["../../src/v1/mod.ts"],"names":[],"mappings":";AAAA,qCAAsC;AACtC,uCAAwC;AAExC,iBAAS;IACL,MAAM,EAAE,KAAK,CAAC,OAAO,CAAC,MAAM;IAC5B,GAAG,EAAE;QACD,MAAM,EAAE,MAAM,CAAC,OAAO,CAAC,MAAM;KAChC;CACJ,CAAC"}
