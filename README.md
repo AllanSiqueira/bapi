@@ -1,4 +1,4 @@
-# Bapi v0.0.1 Documentation
+# Bapi v0.0.2 Documentation
 
 <details open>
 <summary>Table of Contents</summary>
