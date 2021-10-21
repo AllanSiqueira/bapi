@@ -30,7 +30,7 @@
 ✏️  Bapi is an open source versitile NPM package made to create APIs easily and effeciently. Bapi provides an easy to use syntax and easy compatability for use in any kind of API project.
 
 ### How should Bapi be used?
-While it is possible to create an API that does not run through a server, that probably shouldn't be done... incase you didn't know APIs are to be used in the web to access information from various projects- as well as to allow developers to integrate your program into their code! You can create middleware/plugins to easily integrate any server system. However, Bai omes with a built in Express handler. See [bapi.Server](#) for information regarding it!
+While it is possible to create an API that does not run through a server, that probably shouldn't be done... in case you didn't know APIs are to be used in the web to access information from various projects, as well as to allow developers to integrate your program into their code! You can create middleware/plugins to easily integrate any server system. However, Bapi comes with a built in Express handler. See [bapi.Server](#server) for information regarding it!
 
 ### Installation
 Install via NPM:
