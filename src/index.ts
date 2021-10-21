@@ -1,4 +1,4 @@
-import {Client} from './lib/client';
+import {Client} from './lib/client/client';
 import {Server} from './lib/server';
 
 function bapi() {

@@ -1,4 +1,4 @@
-import {bapi, Server} from "./index";
+import {bapi, Server} from ".";
 
 const client: any = bapi(); // returns new Client(...)
 const server: any = Server(client); // returns Express server
