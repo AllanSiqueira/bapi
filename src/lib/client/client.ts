@@ -1,4 +1,4 @@
-import{call, get, on, post, use} from './public/.';
+import {call, get, on, post, use} from './public/.';
 import {executeListeners, createRoute} from './private/.';
 
 class Client {
