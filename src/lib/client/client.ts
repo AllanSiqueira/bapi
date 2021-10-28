@@ -1,4 +1,4 @@
-import {call, get, on, post, use} from './public/.';
+import{call, get, on, post, use} from './public/.';
 import {executeListeners, createRoute} from './private/.';
 
 class Client {
@@ -6,7 +6,7 @@ class Client {
     public middlewares: any[] = [];
     public routes: any[] = [];
     public options: any = {};
-   
+
     constructor(options?: any) {
         if(options) this.options = options;
 
